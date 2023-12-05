@@ -31,7 +31,7 @@ This project aims to leverage the strengths of tcpdump for rapid packet capture 
 
 ![Breakdown of IMCP packet](https://github.com/Malikj10/Packet-Analysis-Lab/blob/00131293e26d5f2134dcbd0e609c37762b4994f4/Screenshots/2.5%20Breakdown%20of%20a%20packet.png)
 
-1.	IP Header (Src/Dst IP, ID, Flags, TTL, Proto, Checksum):
+IP Header (Src/Dst IP, ID, Flags, TTL, Proto, Checksum):
 
         •	Src IP: The source IP address is where the packet originated.
 
@@ -47,7 +47,7 @@ This project aims to leverage the strengths of tcpdump for rapid packet capture 
 
         •	Header Checksum: Used for error-checking of the header.
 
-2.	ICMP Message (Type, Code, Checksum, Identifier, Sequence Number):
+ICMP Message (Type, Code, Checksum, Identifier, Sequence Number):
 
        •	Type: For echo request and reply, the type is 8 and 0, respectively.
 
@@ -59,7 +59,7 @@ This project aims to leverage the strengths of tcpdump for rapid packet capture 
 
        •	Sequence Number: Each echo request has an increasing sequence number. It is used to match replies with requests and to detect lost packets.
 
-3.	Data/Payload:
+Data/Payload:
 
         •	This is the actual data sent in an ICMP message. It often contains a timestamp and a pattern that the sender can use to match with the reply.
 The > symbol indicates the direction of the traffic, from source to destination. The tcpdump output doesn't always show the flags, TTL, and other details of the IP header or ICMP message unless specific verbose flags (-v, -vv, or -vvv) are used when starting tcpdump.
