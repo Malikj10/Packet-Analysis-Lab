@@ -33,35 +33,35 @@ This project aims to leverage the strengths of tcpdump for rapid packet capture 
 
 1.	IP Header (Src/Dst IP, ID, Flags, TTL, Proto, Checksum):
 
-•	Src IP: The source IP address is where the packet originated.
+    •	Src IP: The source IP address is where the packet originated.
 
-•	Dst IP: The destination IP address is where the packet is being sent to.
+    •	Dst IP: The destination IP address is where the packet is being sent to.
 
-•	ID: A unique identifier for the packets sent from source to destination.
+    •	ID: A unique identifier for the packets sent from source to destination.
 
-•	Flags: Control flags, such as whether the packet allows fragmentation.
+    •	Flags: Control flags, such as whether the packet allows fragmentation.
 
-•	TTL (Time to Live): Decremented at each hop; when it reaches zero, the packet is discarded (to prevent looping).
+    •	TTL (Time to Live): Decremented at each hop; when it reaches zero, the packet is discarded (to prevent looping).
 
-•	Protocol (Proto): Indicates the protocol used; for ICMP, this is typically set to '1'.
+    •	Protocol (Proto): Indicates the protocol used; for ICMP, this is typically set to '1'.
 
-•	Header Checksum: Used for error-checking of the header.
+    •	Header Checksum: Used for error-checking of the header.
 
 2.	ICMP Message (Type, Code, Checksum, Identifier, Sequence Number):
 
-•	Type: For echo request and reply, the type is 8 and 0, respectively.
+   •	Type: For echo request and reply, the type is 8 and 0, respectively.
 
-•	Code: Subtype of the message, usually 0 for echo messages.
+   •	Code: Subtype of the message, usually 0 for echo messages.
 
-•	Checksum: Error-checking for the ICMP message.
+   •	Checksum: Error-checking for the ICMP message.
 
-•	Identifier: An identifier to match echo requests with replies.
+   •	Identifier: An identifier to match echo requests with replies.
 
-•	Sequence Number: Each echo request has an increasing sequence number. It is used to match replies with requests and to detect lost packets.
+   •	Sequence Number: Each echo request has an increasing sequence number. It is used to match replies with requests and to detect lost packets.
 
 3.	Data/Payload:
 
-•	This is the actual data sent in an ICMP message. It often contains a timestamp and a pattern that the sender can use to match with the reply.
+   •	This is the actual data sent in an ICMP message. It often contains a timestamp and a pattern that the sender can use to match with the reply.
 The > symbol indicates the direction of the traffic, from source to destination. The tcpdump output doesn't always show the flags, TTL, and other details of the IP header or ICMP message unless specific verbose flags (-v, -vv, or -vvv) are used when starting tcpdump.
 
 
